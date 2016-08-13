@@ -1,0 +1,11 @@
+= Version Information =
+
+x.x:
+
+- fixed: user support button to menu item
+- fixed: only forward to dashboard if !headers_sent
+- fixed: tags on profile layout
+
+2.0 beta (2012-05-11):
+
+- first release
