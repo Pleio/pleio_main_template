@@ -67,13 +67,13 @@ class Navigation extends React.Component {
                 </div>
                 <div className="navigation__bottom">
                     <div className="navigation__account">
-                        <a href="/login" onClick={ (e) => this.handleNavigate(e, '/login') }>
+                        <a href="/login">
                             <div className="button ___stretch ___outline">{ this.props.strings.login }</div>
                         </a>
 
-                        <Link to="/register">
+                        <a href="/register">
                             <div className="button ___stretch ___white">{ this.props.strings.register }</div>
-                        </Link>
+                        </a>
                     </div>
                     <div className="navigation__languages">
                         <Language language="nl" currentLanguage={this.props.currentLanguage} changeLanguage={this.props.changeLanguage} />

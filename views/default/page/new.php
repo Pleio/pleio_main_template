@@ -1,5 +1,7 @@
 <?php
 header("Content-type: text/html; charset=UTF-8");
+
+$loadJS = elgg_extract("loadJS", $vars, false);
 $lang = get_current_language();
 
 if (empty($vars['title'])) {
@@ -7,8 +9,6 @@ if (empty($vars['title'])) {
 } else {
     $title = elgg_get_config('sitename') . ": " . $vars['title'];
 }
-
-$messages = elgg_view('page/elements/messages', array('object' => $vars['sysmessages']));
 
 ?>
 
@@ -24,11 +24,13 @@ $messages = elgg_view('page/elements/messages', array('object' => $vars['sysmess
         <link rel="icon" href="/mod/pleio_main_template/assets/images/favicon.png">
     </head>
     <body>
-        <div class="elgg-page-messages">
-            <?php echo $messages; ?>
-        </div>
         <?php echo $vars['body']; ?>
+
+        <?php if ($loadJS): ?>
+            <script src="/mod/pleio_main_template/assets/pleio_main_template.js?v=<?php echo $CONFIG->lastcache; ?>"></script>
+        <?php endif; ?>
         <script src="https://www.google.com/recaptcha/api.js"></script>
-        <script src="/mod/pleio_main_template/assets/pleio_main_template.js?v=<?php echo $CONFIG->lastcache; ?>"></script>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
     </body>
 </html>

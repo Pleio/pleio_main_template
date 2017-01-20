@@ -28,13 +28,28 @@ function pleio_main_template_init(){
 	
 	elgg_register_widget_type("index_pleio", "Pleio", "Pleio Index Widget", "index", false);
 
-	elgg_register_plugin_hook_handler("index", "system", "pleio_main_template_page_handler");
-	elgg_register_page_handler("login", "pleio_main_template_page_handler");
-	elgg_register_page_handler("register", "pleio_main_template_page_handler");
-	elgg_register_page_handler("about", "pleio_main_template_page_handler");
-    elgg_register_page_handler("our-users", "pleio_main_template_page_handler");
-    elgg_register_page_handler("help", "pleio_main_template_page_handler");
+	elgg_register_plugin_hook_handler("index", "system", "pleio_main_template_index_handler");
+	elgg_register_page_handler("about", "pleio_main_template_index_handler");
+    elgg_register_page_handler("our-users", "pleio_main_template_index_handler");
+    elgg_register_page_handler("help", "pleio_main_template_index_handler");
 	elgg_register_page_handler("graphql", "pleio_main_template_graphql");
+
+	elgg_register_page_handler("login", "pleio_main_template_login_handler");
+	elgg_register_page_handler("register", "pleio_main_template_register_handler");
+	elgg_register_page_handler("forgotpassword", "pleio_main_template_forgotpassword_handler");
+	elgg_register_page_handler("resetpassword", "pleio_main_template_resetpassword_handler");
+
+	elgg_unregister_action("login");
+	elgg_register_action("login", dirname(__FILE__) . "/actions/login.php", "public");
+
+	elgg_unregister_action("register");
+	elgg_register_action("register", dirname(__FILE__) . "/actions/register.php", "public");
+
+	elgg_unregister_action("user/requestnewpassword");
+	elgg_register_action("user/requestnewpassword", dirname(__FILE__) . "/actions/user/requestnewpassword.php", "public");
+
+	elgg_unregister_action("user/passwordreset");
+	elgg_register_action("user/passwordreset", dirname(__FILE__) . "/actions/user/passwordreset.php", "public");
 
     if (!isset($_COOKIE['CSRF_TOKEN'])) {
         $token = md5(openssl_random_pseudo_bytes(32));
@@ -43,12 +58,50 @@ function pleio_main_template_init(){
     }
 }
 
-function pleio_main_template_page_handler() {
+function pleio_main_template_index_handler($page) {
 	if (!elgg_is_logged_in()) {
 		include("pages/index.php");
 		return true;
 	} else {
 		forward("dashboard");
+	}
+}
+
+function pleio_main_template_register_handler($page) {
+	switch ($page[0]) {
+		case "complete":
+			include("pages/register_complete.php");
+			return true;
+		default:
+			include("pages/register.php");			
+			return true;
+	}
+}
+
+function pleio_main_template_login_handler($page) {
+	include("pages/login.php");
+	return true;
+}
+
+function pleio_main_template_forgotpassword_handler($page) {
+	switch ($page[0]) {
+		case "complete":
+			include("pages/forgotpassword_complete.php");
+			return true;
+		default:
+			include("pages/forgotpassword.php");
+			return true;		
+	}
+}
+
+function pleio_main_template_resetpassword_handler($page) {
+	switch ($page[0]) {
+		case "complete":
+			include("pages/resetpassword_complete.php");
+			return true;
+		default:
+			include("pages/resetpassword.php");
+			return true;		
 	}
 }
 
@@ -179,6 +232,23 @@ function pleio_main_template_pagesetup(){
 	elgg_register_menu_item("site", $item);
 	
 	elgg_unregister_menu_item("footer", "report_this");
+}
+
+function pleio_main_template_get_system_messages() {
+	$messages = null;
+	if (count_messages()) {
+		// get messages - try for errors first
+		$messages = system_messages(NULL, "error");
+		if (count($messages["error"]) == 0) {
+			// no errors so grab rest of messages
+			$messages = system_messages(null, "");
+		} else {
+			// we have errors - clear out remaining messages
+			system_messages(null, "");
+		}
+	}
+
+	return $messages;
 }
 
 elgg_register_event_handler("init", "system", "pleio_main_template_init");

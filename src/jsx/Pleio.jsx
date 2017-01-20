@@ -27,7 +27,7 @@ let store = createStore(combineReducers({
     currentLanguage: currentLanguage,
     apollo: client.reducer()
 }), {
-    currentLanguage: "nl"
+    currentLanguage: document.documentElement.lang
 }, applyMiddleware(client.middleware()))
 
 ReactDOM.render((
