@@ -10,5 +10,5 @@ if(!empty($guid)){
 		register_error(elgg_echo("InvalidParameterException:GUIDNotFound", array($guid)));
 	}
 } else {
-	register_error(elgg_echo("theme_pleio:personal_menu:missing_input"));
+	register_error(elgg_echo("pleio_main_template:personal_menu:missing_input"));
 }

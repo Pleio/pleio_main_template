@@ -15,7 +15,7 @@ if (isset($vars['class'])) {
 }
 
 if(elgg_in_context("dashboard")){
-	$class .= " theme-pleio-dashboard";
+	$class .= " pleio-main-template-dashboard";
 }
 
 // navigation defaults to breadcrumbs
@@ -23,7 +23,7 @@ $nav = elgg_extract('nav', $vars, elgg_view('navigation/breadcrumbs'));
 
 ?>
 <div class="<?php echo $class; ?>">
-	<?php echo elgg_view("theme_pleio/sidebar/menu", $vars); ?>
+	<?php echo elgg_view("pleio_main_template/sidebar/menu", $vars); ?>
 	<?php echo $nav; ?>
 	<div class="elgg-body elgg-main">
 	<?php
@@ -43,6 +43,6 @@ $nav = elgg_extract('nav', $vars, elgg_view('navigation/breadcrumbs'));
 	</div>
 </div>
 <script type="text/javascript">
-	var height = $("#theme-pleio-sidebar").parent().outerHeight();
-	$("#theme-pleio-sidebar").css("height", height + "px");
+	var height = $("#pleio-main-template-sidebar").parent().outerHeight();
+	$("#pleio-main-template-sidebar").css("height", height + "px");
 </script>

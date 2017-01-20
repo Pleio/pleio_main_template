@@ -1,12 +1,12 @@
 {
-    "name": "pleio/theme_pleio",
+    "name": "pleio/pleio_main_template",
     "description": "The main theme of Pleio.nl.",
     "type": "elgg-plugin",
     "keywords": ["elgg", "plugin", "theme"],
     "license": "GPL-2.0",
     "support": {
-        "source": "https://github.com/Pleio/theme_pleio",
-        "issues": "https://github.com/Pleio/theme_pleio/issues"
+        "source": "https://github.com/Pleio/pleio_main_template",
+        "issues": "https://github.com/Pleio/pleio_main_template/issues"
     },
     "require": {
         "composer/installers": "^1.0.8"

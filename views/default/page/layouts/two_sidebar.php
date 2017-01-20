@@ -18,7 +18,7 @@ if (isset($vars['class'])) {
 ?>
 
 <div class="<?php echo $class; ?>">
-	<?php echo elgg_view("theme_pleio/sidebar/menu", $vars); ?>
+	<?php echo elgg_view("pleio_main_template/sidebar/menu", $vars); ?>
 	<div class="elgg-sidebar">
 		<?php
 			echo elgg_view('page/elements/sidebar', $vars);
@@ -39,6 +39,6 @@ if (isset($vars['class'])) {
 	</div>
 </div>
 <script type="text/javascript">
-	var height = $("#theme-pleio-sidebar").parent().outerHeight();
-	$("#theme-pleio-sidebar").css("height", height + "px");
+	var height = $("#pleio-main-template-sidebar").parent().outerHeight();
+	$("#pleio-main-template-sidebar").css("height", height + "px");
 </script>

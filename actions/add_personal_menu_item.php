@@ -14,5 +14,5 @@ if($user && !empty($title) && !empty($url)){
 	
 	$menu_item->save();
 } else {
-	register_error("theme_pleio:personal_menu:missing_input");
+	register_error("pleio_main_template:personal_menu:missing_input");
 }

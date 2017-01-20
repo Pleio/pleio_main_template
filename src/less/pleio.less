@@ -1,0 +1,50 @@
+#root {
+    height: 100%;
+    width: 100%;
+}
+
+.main {
+    overflow-x: auto;
+}
+
+.slide {
+    overflow: auto;
+}
+
+.disc {
+    list-style: disc;
+    padding: inherit;
+}
+
+.forgot-password {
+    margin-top: 0.75rem;
+    float: right;
+    font-size: 0.8em;
+}
+
+a {
+    color: @color-primary;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: color 9999s ease-out, background-color 9999s ease-in-out;
+}
+
+.elgg-system-messages {
+    position: fixed;
+    top: 24px;
+    right: 20px;
+    max-width: 500px;
+    z-index: 2000;
+}
+
+.elgg-system-messages li {
+    margin-top: 10px;
+}
+
+.elgg-system-messages li p {
+    margin: 0;
+}
