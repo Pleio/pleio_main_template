@@ -22,7 +22,11 @@ $english = array(
 	'pleio_main_template:change_password' => "Change password",
 	'pleio_main_template:reset_password_confirm' => "Please choose a new password for your account and conform it.",
 	'pleio_main_template:passwordreset:subject' => "Password changed.",
-	'pleio_main_template:passwordreset:email' => "The password of your account is changed succesfully. If you did not change your password please contact the Pleio administrator.",
+	'pleio_main_template:passwordreset:email' => "Hello %s,
+
+	The password of your account is changed succesfully.
+
+	If you did not change your password please contact the administrators of www.pleio.nl.",
 	'pleio_main_template:resetpassword:changed' => "The password of your account is changed succesfully. To continue, please login with your new password.",
 	'pleio_main_template:terms' => "terms",
 	'pleio_main_template:subscribe_newsletter' => "I would like to receive the newsletter",

@@ -22,7 +22,11 @@ $dutch = array(
 	'pleio_main_template:change_password' => "Verander wachtwoord",
 	'pleio_main_template:reset_password_confirm' => "Kies een nieuw wachtwoord voor je account en bevestig het daarna nogmaals.",
 	'pleio_main_template:passwordreset:subject' => "Wachtwoord aangepast.",
-	'pleio_main_template:passwordreset:email' => "Het wachtwoord van je account is succesvol aangepast. Heb je jouw wachtwoord recent niet aangepast? Neem dan direct contact op met de Pleio beheerder.",
+	'pleio_main_template:passwordreset:email' => "Hallo %s,
+
+	Het wachtwoord van je account is succesvol aangepast.
+
+	Heb je jouw wachtwoord niet aangepast? Neem dan contact op met een van de beheerders van www.pleio.nl.",
 	'pleio_main_template:resetpassword:changed' => "Het wachtwoord van je account is succesvol aangepast. Log nu in met je nieuwe wachtwoord om door te gaan.",
 	'pleio_main_template:terms' => "voorwaarden",
 	'pleio_main_template:subscribe_newsletter' => "Ik wil de nieuwsbrief ontvangen",

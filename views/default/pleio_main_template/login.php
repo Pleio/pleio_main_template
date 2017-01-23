@@ -21,7 +21,7 @@
                     <a href="/socialink/forward/linkedin"><div class="button ___stretch"><?php echo elgg_echo("pleio_main_template:login_using"); ?> LinkedIn</div></a>
                     <div class="account__divider"><span><?php echo elgg_echo("pleio_main_template:or"); ?></span></div>
                     <?php echo elgg_view("pleio_main_template/messages", ["messages" => $vars["messages"]]); ?>
-                    <?php echo elgg_view_form("login", ["class" => "login"]); ?>
+                    <?php echo elgg_view_form("login_unextended", ["class" => "login", "action" => "action/login"]); ?>
                 </div>
             </div>
         </div>

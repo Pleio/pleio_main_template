@@ -40,7 +40,7 @@ if (force_user_password_reset($user_guid, $password)) {
     remove_private_setting($user_guid, 'passwd_conf_code');
 
     reset_login_failure_count($user_guid);
-    notify_user($user->guid, $CONFIG->site->guid, elgg_echo('pleio_main_template:passwordreset:subject'), elgg_echo('pleio_main_template:passwordreset:email'), array(), 'email');
+    notify_user($user->guid, $CONFIG->site->guid, elgg_echo('pleio_main_template:passwordreset:subject'), elgg_echo('pleio_main_template:passwordreset:email', [$user->name]), array(), 'email');
 
     forward('/resetpassword/complete');
 } else {

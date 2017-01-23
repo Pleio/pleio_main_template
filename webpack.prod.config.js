@@ -4,7 +4,7 @@ var autoprefixer = require("autoprefixer");
 
 module.exports = {
     entry: {
-        theme_pleio: "./src/js/pleio.js"
+        pleio_main_template: "./src/js/pleio.js"
     },
     output: {
         path: "./assets",
