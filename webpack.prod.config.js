@@ -8,7 +8,7 @@ module.exports = {
     },
     output: {
         path: "./assets",
-        publicPath: "/mod/pleio/assets/",
+        publicPath: "/mod/pleio_main_template/assets/",
         filename: "[name].js",
         chunkFilename: "[id].js"
     },
