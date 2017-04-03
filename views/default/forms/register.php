@@ -1,4 +1,8 @@
 <?php
+$returnto = urlencode(urldecode($_GET["returnto"]));
+?>
+
+<?php
 if (elgg_is_sticky_form('register')) {
     extract(elgg_get_sticky_values('register'));
     elgg_clear_sticky_form('register');
@@ -40,3 +44,5 @@ if (elgg_is_sticky_form('register')) {
 <div class="register__button">
     <button class="button ___stretch ___outline ___active" type="submit">Registreer</button>
 </div>
+
+<input type="hidden" name="returnto" value="<?php echo $returnto; ?>">

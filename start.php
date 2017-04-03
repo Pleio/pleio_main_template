@@ -251,6 +251,24 @@ function pleio_main_template_get_system_messages() {
 	return $messages;
 }
 
+function pleio_main_template_is_valid_returnto($url) {
+    $site_url = parse_url(elgg_get_site_url());
+    $returnto_url = parse_url($url);
+
+    if (!$site_url || !$returnto_url) {
+        return false;
+    }
+    if ($site_url["scheme"] !== $returnto_url["scheme"]) {
+        return false;
+    }
+
+    if ($site_url["host"] !== $returnto_url["host"]) {
+        return false;
+    }
+
+    return true;
+}
+
 elgg_register_event_handler("init", "system", "pleio_main_template_init");
 elgg_register_event_handler("pagesetup", "system", "pleio_main_template_pagesetup");
 

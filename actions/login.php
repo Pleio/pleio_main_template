@@ -7,14 +7,9 @@
  */
 
 // set forward url
-if (get_input("returnto")) {
-    $site_url = parse_url(elgg_get_site_url());
-    $returnto_url = parse_url(urldecode(get_input("returnto")));
-    if ($site_url && $returnto_url && $site_url["scheme"] == $returnto_url["scheme"] && $site_url["host"] == $returnto_url["host"]) {
-        $forward_url = urldecode(get_input("returnto"));
-    } else {
-        $forward_url = '';
-    }
+$returnto = urldecode(get_input("returnto"));
+if ($returnto && pleio_main_template_is_valid_returnto($returnto)) {
+    $forward_url = $returnto;
 } elseif (!empty($_SESSION['last_forward_from'])) {
     $forward_url = $_SESSION['last_forward_from'];
 } elseif (get_input('returntoreferer')) {
