@@ -30,7 +30,6 @@
     "ls": "^0.2.0",
     "materialize-css": "^0.97.7",
     "postcss-loader": "^0.13.0",
-    "precommit-hook": "^3.0.0",
     "react": "^15.3.2",
     "react-apollo": "^0.4.4",
     "react-dom": "^15.0.2",
@@ -45,8 +44,5 @@
     "build": "webpack --config webpack.prod.config.js",
     "lint": "jshint .",
     "validate": "npm ls"
-  },
-  "pre-commit": [
-    "build"
-  ]
+  }
 }
