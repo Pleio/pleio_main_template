@@ -18,6 +18,7 @@
             <div class="account__content-container">
                 <div class="account__content">
                     <?php echo elgg_view("pleio_main_template/messages", ["messages" => $vars["messages"]]); ?>
+                    <p>Welkom op Pleio. Vul je gegevens in om in te loggen.</p>
                     <?php echo elgg_view_form("login_unextended", ["class" => "login", "action" => "action/login"]); ?>
                 </div>
             </div>

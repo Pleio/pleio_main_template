@@ -2,11 +2,11 @@
 $returnto = urlencode(urldecode($_GET["returnto"]));
 ?>
 <div class="input-field">
-    <input type="text" id="input-username" name="username" value="" placeholder="" autofocus>
+    <input type="text" id="input-username" class="validate" required="" name="username" value="" placeholder="" autofocus>
     <label for="input-username"><?php echo elgg_echo('loginusername'); ?></label>
 </div>
 <div class="input-field">
-    <input type="password" id="input-password" name="password" value="" placeholder="">
+    <input type="password" id="input-password" class="validate" required="" name="password" value="" placeholder="">
     <label for="input-password"><?php echo elgg_echo('password'); ?></label>
 </div>
 <div class="login__buttons">
