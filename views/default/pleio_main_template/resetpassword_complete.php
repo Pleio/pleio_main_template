@@ -3,7 +3,7 @@
         <div class="account__top-bar">
             <div class="row">
                 <div class="col-xs-6">
-                    <a class="account__logo" title="Terug naar de homepage" href="/">
+                    <a class="navigation__logo" title="Terug naar de homepage" href="/">
                         <?php echo elgg_view("pleio_main_template/components/logo"); ?>
                     </a>
                 </div>

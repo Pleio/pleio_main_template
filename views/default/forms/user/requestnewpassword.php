@@ -8,5 +8,5 @@
 </div>
 
 <div class="register__button">
-    <button class="button ___stretch ___outline ___grey ___active" type="submit"><?php echo elgg_echo("request"); ?></button>
+    <button class="button ___stretch ___active" type="submit"><?php echo elgg_echo("request"); ?></button>
 </div>

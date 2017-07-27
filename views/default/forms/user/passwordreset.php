@@ -9,7 +9,7 @@
 </div>
 
 <div class="register__button">
-    <button class="button ___stretch ___outline ___grey ___active" type="submit"><?php echo elgg_echo("pleio_main_template:change_password"); ?></button>
+    <button class="button ___stretch ___active" type="submit"><?php echo elgg_echo("pleio_main_template:change_password"); ?></button>
 </div>
 
 <?php echo elgg_view('input/hidden', array('name' => 'u', 'value' => get_input("u"))); ?>

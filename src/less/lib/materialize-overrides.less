@@ -18,7 +18,7 @@
 
     /* label color */
     label {
-        color: @color-grey__40;
+        color: @color-grey__50;
         font-size: @font-base;
         line-height: 1;
         left: 0;
@@ -34,7 +34,7 @@
 
     /* label color */
     label.active {
-        color: @color-grey__40;
+        color: @color-grey__50;
         font-size: 1.2rem;
     }
     /* label focus color */
@@ -106,7 +106,7 @@
 
     /* label color */
     label {
-        color: @color-grey;
+        color: @color-black;
         font-size: @font-base;
     }
 
@@ -169,7 +169,7 @@
 }
 
 [type="checkbox"]:checked+label {
-    color: #fff;
+    color: @color-black;
 }
 
 
@@ -191,10 +191,14 @@
 // BOX:hover
 [type="checkbox"].filled-in:hover+label:hover:after,
 [type="checkbox"].filled-in+label:hover:after {
-    border-color: #fff;
+    border-color: @color-grey__40;
 }
 // BOX:checked
 [type="checkbox"].filled-in:checked+label:after {
-    background: #fff;
-    border-color: #fff;
+    background: @color-white;
+    border-color: @color-grey__40;
+}
+
+label {
+    color: @color-black;
 }

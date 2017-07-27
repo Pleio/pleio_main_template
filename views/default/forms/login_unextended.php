@@ -11,7 +11,7 @@ $returnto = urlencode(urldecode($_GET["returnto"]));
 </div>
 <div class="login__buttons">
     <div>
-        <button name="login" class="button ___stretch ___outline ___grey ___active login__login" type="submit">Inloggen</button>
+        <button name="login" class="button ___stretch ___active login__login" type="submit">Inloggen</button>
     </div>
     <div class="forgot-password">
         <a href="/register?returnto=<?php echo $returnto; ?>"><?php echo elgg_echo('register'); ?></a><br />
