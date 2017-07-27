@@ -1,17 +1,17 @@
 <?php
 $returnto = urlencode(urldecode($_GET["returnto"]));
 ?>
-<div class="input-field ___white">
+<div class="input-field">
     <input type="text" id="input-username" name="username" value="" placeholder="" autofocus>
     <label for="input-username"><?php echo elgg_echo('loginusername'); ?></label>
 </div>
-<div class="input-field ___white">
+<div class="input-field">
     <input type="password" id="input-password" name="password" value="" placeholder="">
     <label for="input-password"><?php echo elgg_echo('password'); ?></label>
 </div>
 <div class="login__buttons">
     <div>
-        <button name="login" class="button ___stretch ___outline ___active login__login" type="submit">Inloggen</button>
+        <button name="login" class="button ___stretch ___outline ___grey ___active login__login" type="submit">Inloggen</button>
     </div>
     <div class="forgot-password">
         <a href="/register?returnto=<?php echo $returnto; ?>"><?php echo elgg_echo('register'); ?></a><br />

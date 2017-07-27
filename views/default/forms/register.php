@@ -9,19 +9,19 @@ if (elgg_is_sticky_form('register')) {
 }
 ?>
 
-<div class="input-field ___white">
+<div class="input-field">
     <input class="validate" id="input-name" type="text" pattern=".{5,}" name="name" value="<?php echo $name; ?>" autofocus></input>
     <label for="input-name"><?php echo elgg_echo('name'); ?></label>
 </div>
-<div class="input-field ___white">
+<div class="input-field">
     <input class="validate" id="input-email" type="email" name="email" value="<?php echo $email; ?>"></input>
     <label for="input-email"><?php echo elgg_echo('email'); ?></label>
 </div>
-<div class="input-field ___white">
+<div class="input-field">
     <input class="validate" id="input-set-password" type="password" name="password" pattern=".{6,}" value="<?php echo $password; ?>"></input>
     <label for="input-set-password"><?php echo elgg_echo('password'); ?></label>
 </div>
-<div class="input-field ___white">
+<div class="input-field">
     <input class="validate" id="input-password-verification" type="password" name="password2" pattern=".{6,}" value="<?php echo $password2; ?>"></input>
     <label for="input-password-verification"><?php echo elgg_echo('passwordagain'); ?></label>
 </div>
@@ -42,7 +42,7 @@ if (elgg_is_sticky_form('register')) {
 </div>
 
 <div class="register__button">
-    <button class="button ___stretch ___outline ___active" type="submit">Registreer</button>
+    <button class="button ___stretch ___outline ___grey ___active" type="submit">Registreer</button>
 </div>
 
 <input type="hidden" name="returnto" value="<?php echo $returnto; ?>">

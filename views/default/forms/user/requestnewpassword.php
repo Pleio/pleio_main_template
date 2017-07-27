@@ -1,4 +1,4 @@
-<div class="input-field ___white">
+<div class="input-field">
     <input class="validate" id="username" type="text" name="username" autofocus></input>
     <label for="username"><?php echo elgg_echo("loginusername"); ?></label>
 </div>
@@ -8,5 +8,5 @@
 </div>
 
 <div class="register__button">
-    <button class="button ___stretch ___outline ___active" type="submit"><?php echo elgg_echo("request"); ?></button>
+    <button class="button ___stretch ___outline ___grey ___active" type="submit"><?php echo elgg_echo("request"); ?></button>
 </div>
