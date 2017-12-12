@@ -28,6 +28,7 @@ $dutch = array(
 
 	Heb je jouw wachtwoord niet aangepast? Neem dan contact op met een van de beheerders van www.pleio.nl.",
 	'pleio_main_template:resetpassword:changed' => "Het wachtwoord van je account is succesvol aangepast. Log nu in met je nieuwe wachtwoord om door te gaan.",
+	'pleio_main_template:resetpassword:link_expired' => "De link om een nieuw wachtwoord aan te vragen is verlopen. Vraag een nieuw wachtwoord aan.",
 	'pleio_main_template:terms' => "voorwaarden",
 	'pleio_main_template:subscribe_newsletter' => "Ik wil de nieuwsbrief ontvangen",
 	'pleio_main_template:or' => "of"

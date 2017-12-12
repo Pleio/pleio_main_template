@@ -28,6 +28,7 @@ $english = array(
 
 	If you did not change your password please contact the administrators of www.pleio.nl.",
 	'pleio_main_template:resetpassword:changed' => "The password of your account is changed succesfully. To continue, please login with your new password.",
+	'pleio_main_template:resetpassword:link_expired' => "The password reset link is expired. Please request a new link.",
 	'pleio_main_template:terms' => "terms",
 	'pleio_main_template:subscribe_newsletter' => "I would like to receive the newsletter",
 	'pleio_main_template:or' => "or"

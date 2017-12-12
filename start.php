@@ -18,14 +18,17 @@ define("THEME_COLOR_5", "BABABA"); // just another grey
 define("THEME_GRAPHICS_FOLDER", elgg_get_site_url() . "mod/pleio_main_template/_graphics/");
 define("MULTI_DASHBOARD_MAX_TABS", 10); // overrule default of 7
 
+elgg_register_event_handler("init", "system", "pleio_main_template_init");
+elgg_register_event_handler("pagesetup", "system", "pleio_main_template_pagesetup");
+
 function pleio_main_template_init(){
 	elgg_extend_view("css/elgg", "pleio_main_template/css/site");
 	elgg_extend_view("css/ie7", "pleio_main_template/css/ie7");
 	elgg_extend_view("js/elgg", "pleio_main_template/js/site");
-	
+
 	elgg_register_plugin_hook_handler("register", "menu:pleio_main_template_sidebar", "pleio_main_template_sidebar_menu_setup");
 	elgg_register_plugin_hook_handler("prepare", "menu:pleio_main_template_sidebar", "pleio_main_template_sidebar_menu_prepare");
-	
+
 	elgg_register_widget_type("index_pleio", "Pleio", "Pleio Index Widget", "index", false);
 
 	elgg_register_plugin_hook_handler("index", "system", "pleio_main_template_index_handler");
@@ -39,6 +42,9 @@ function pleio_main_template_init(){
 	elgg_register_page_handler("forgotpassword", "pleio_main_template_forgotpassword_handler");
 	elgg_register_page_handler("resetpassword", "pleio_main_template_resetpassword_handler");
 
+    elgg_unregister_plugin_hook_handler("email", "system", "html_email_handler_email_hook");
+    elgg_register_plugin_hook_handler("email", "system", "pleio_main_template_email_handler");
+
 	elgg_unregister_action("login");
 	elgg_register_action("login", dirname(__FILE__) . "/actions/login.php", "public");
 
@@ -50,6 +56,10 @@ function pleio_main_template_init(){
 
 	elgg_unregister_action("user/passwordreset");
 	elgg_register_action("user/passwordreset", dirname(__FILE__) . "/actions/user/passwordreset.php", "public");
+
+	elgg_register_action("pleio_main_template/toggle_sidebar", dirname(__FILE__) . "/actions/toggle_sidebar.php");
+	elgg_register_action("pleio_main_template/add_personal_menu_item", dirname(__FILE__) . "/actions/add_personal_menu_item.php");
+	elgg_register_action("pleio_main_template/remove_personal_menu_item", dirname(__FILE__) . "/actions/remove_personal_menu_item.php");
 
     if (!isset($_COOKIE['CSRF_TOKEN'])) {
         $token = md5(openssl_random_pseudo_bytes(32));
@@ -269,9 +279,48 @@ function pleio_main_template_is_valid_returnto($url) {
     return true;
 }
 
-elgg_register_event_handler("init", "system", "pleio_main_template_init");
-elgg_register_event_handler("pagesetup", "system", "pleio_main_template_pagesetup");
+function pleio_main_template_email_handler($hook, $type, $return, $params) {
+    global $CONFIG;
+    $site = elgg_get_site_entity();
 
-elgg_register_action("pleio_main_template/toggle_sidebar", dirname(__FILE__) . "/actions/toggle_sidebar.php");
-elgg_register_action("pleio_main_template/add_personal_menu_item", dirname(__FILE__) . "/actions/add_personal_menu_item.php");
-elgg_register_action("pleio_main_template/remove_personal_menu_item", dirname(__FILE__) . "/actions/remove_personal_menu_item.php");
+    $message_id = sprintf("<%s.%s@%s>", base_convert(microtime(), 10, 36), base_convert(bin2hex(openssl_random_pseudo_bytes(8)), 16, 36), $_SERVER["SERVER_NAME"]);
+
+    $reply_to = "=?UTF-8?B?" . base64_encode($site->name) . "?= ";
+
+    if ($site->email) {
+        $reply_to .= "<" . $site->email . ">";
+    } elseif (isset($CONFIG->email_from)) {
+        $reply_to .= "<{$CONFIG->email_from[1]}>";
+    } else {
+        $reply_to .= "<noreply@" . get_site_domain($site->guid) . ">";
+    }
+
+    $headers = "Sender: {$params["from"]}\r\n"
+        . "From: {$params["from"]}\r\n"
+        . "Reply-To: {$reply_to}\r\n"
+        . "Message-Id: {$message_id}\r\n"
+        . "MIME-Version: 1.0\r\n"
+        . "Content-Type: text/html; charset=UTF-8\r\n";
+
+    // Sanitise subject by stripping line endings
+    $subject = preg_replace("/(\r\n|\r|\n)/", " ", $params["subject"]);
+
+    $body = $params["body"];
+    $body = nl2br($body);
+
+    $email_params = [
+        "subject" => $subject,
+        "body" => $body
+    ];
+
+    if (!is_array($params["params"])) {
+        $params["params"] = [];
+    }
+
+    return mail(
+        $params["to"],
+        $subject,
+        elgg_view("emails/default", array_merge($email_params, $params["params"])),
+        $headers
+    );
+}
