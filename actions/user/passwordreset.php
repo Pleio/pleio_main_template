@@ -31,13 +31,21 @@ try {
 }
 
 $saved_code = $user->getPrivateSetting('passwd_conf_code');
+$expiry = $user->getPrivateSetting('passwd_conf_expiry');
+
 if (!$saved_code || $saved_code !== $code) {
     register_error(elgg_echo('user:password:fail'));
     forward(REFERER);
 }
 
+if ($expiry && (time() > $expiry)) {
+    register_error(elgg_echo('pleio_main_template:resetpassword:link_expired'));
+    forward(REFERER);
+}
+
 if (force_user_password_reset($user_guid, $password)) {
     remove_private_setting($user_guid, 'passwd_conf_code');
+    remove_private_setting($user_guid, 'passwd_conf_expiry');
 
     reset_login_failure_count($user_guid);
     notify_user($user->guid, $CONFIG->site->guid, elgg_echo('pleio_main_template:passwordreset:subject'), elgg_echo('pleio_main_template:passwordreset:email', [$user->name]), array(), 'email');
@@ -45,5 +53,5 @@ if (force_user_password_reset($user_guid, $password)) {
     forward('/resetpassword/complete');
 } else {
     register_error(elgg_echo('user:password:fail'));
-    forward(REFERER);   
+    forward(REFERER);
 }
