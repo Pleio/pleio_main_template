@@ -18,9 +18,6 @@ define("THEME_COLOR_5", "BABABA"); // just another grey
 define("THEME_GRAPHICS_FOLDER", elgg_get_site_url() . "mod/pleio_main_template/_graphics/");
 define("MULTI_DASHBOARD_MAX_TABS", 10); // overrule default of 7
 
-elgg_register_event_handler("init", "system", "pleio_main_template_init");
-elgg_register_event_handler("pagesetup", "system", "pleio_main_template_pagesetup");
-
 function pleio_main_template_init(){
 	elgg_extend_view("css/elgg", "pleio_main_template/css/site");
 	elgg_extend_view("css/ie7", "pleio_main_template/css/ie7");
@@ -57,9 +54,7 @@ function pleio_main_template_init(){
 	elgg_unregister_action("user/passwordreset");
 	elgg_register_action("user/passwordreset", dirname(__FILE__) . "/actions/user/passwordreset.php", "public");
 
-	elgg_register_action("pleio_main_template/toggle_sidebar", dirname(__FILE__) . "/actions/toggle_sidebar.php");
-	elgg_register_action("pleio_main_template/add_personal_menu_item", dirname(__FILE__) . "/actions/add_personal_menu_item.php");
-	elgg_register_action("pleio_main_template/remove_personal_menu_item", dirname(__FILE__) . "/actions/remove_personal_menu_item.php");
+	elgg_register_action("request_info", dirname(__FILE__) . "/actions/request_info.php", "public");
 
     if (!isset($_COOKIE['CSRF_TOKEN'])) {
         $token = md5(openssl_random_pseudo_bytes(32));
@@ -317,10 +312,21 @@ function pleio_main_template_email_handler($hook, $type, $return, $params) {
         $params["params"] = [];
     }
 
-    return mail(
-        $params["to"],
-        $subject,
-        elgg_view("emails/default", array_merge($email_params, $params["params"])),
-        $headers
-    );
+	if (!isset($CONFIG->block_mail)) {
+        return mail(
+            $params["to"],
+            $subject,
+            elgg_view("emails/default", array_merge($email_params, $params["params"])),
+            $headers
+        );
+	} else {
+		return true;
+	}
 }
+
+elgg_register_event_handler("init", "system", "pleio_main_template_init");
+elgg_register_event_handler("pagesetup", "system", "pleio_main_template_pagesetup");
+
+elgg_register_action("pleio_main_template/toggle_sidebar", dirname(__FILE__) . "/actions/toggle_sidebar.php");
+elgg_register_action("pleio_main_template/add_personal_menu_item", dirname(__FILE__) . "/actions/add_personal_menu_item.php");
+elgg_register_action("pleio_main_template/remove_personal_menu_item", dirname(__FILE__) . "/actions/remove_personal_menu_item.php");

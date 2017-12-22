@@ -31,7 +31,9 @@ $english = array(
 	'pleio_main_template:resetpassword:link_expired' => "The password reset link is expired. Please request a new link.",
 	'pleio_main_template:terms' => "terms",
 	'pleio_main_template:subscribe_newsletter' => "I would like to receive the newsletter",
-	'pleio_main_template:or' => "or"
+	'pleio_main_template:or' => "or",
+	'pleio_main_template:sent' => 'Message succesfully sent',
+	'pleio_main_template:fill_all_fields' => 'Please fill in all fields',
 );
 
 add_translation('en', $english);

@@ -31,7 +31,10 @@ $dutch = array(
 	'pleio_main_template:resetpassword:link_expired' => "De link om een nieuw wachtwoord aan te vragen is verlopen. Vraag een nieuw wachtwoord aan.",
 	'pleio_main_template:terms' => "voorwaarden",
 	'pleio_main_template:subscribe_newsletter' => "Ik wil de nieuwsbrief ontvangen",
-	'pleio_main_template:or' => "of"
+	'pleio_main_template:or' => "of",
+	'pleio_main_template:sent' => 'Bericht verzonden',
+	'pleio_main_template:fill_all_fields' => 'Vul alle velden in',
+
 );
 
 add_translation('nl', $dutch);
