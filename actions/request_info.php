@@ -1,7 +1,13 @@
 <?php
 
+$url = get_input("url");
 $name = get_input("name");
 $email = get_input("email");
+
+if ($url) {
+    register_error(elgg_echo("pleio_main_template:fill_all_fields"));
+    forward("/#request");
+}
 
 if ($name && $email) {
     // From
@@ -24,7 +30,7 @@ if ($name && $email) {
     ";
 
     system_message(elgg_echo("pleio_main_template:sent"));
-    elgg_send_email($from, "support@pleio.org", $subject, $message);
+    elgg_send_email($from, "support@pleio.nl", $subject, $message);
     forward("/#request");
 } else {
     register_error(elgg_echo("pleio_main_template:fill_all_fields"));

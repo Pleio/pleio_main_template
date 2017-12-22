@@ -9,10 +9,6 @@ fieldset {
     border: 0;
 }
 
-.main {
-    overflow-x: auto;
-}
-
 .slide {
     overflow: auto;
 }
@@ -37,6 +33,12 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
     transition: color 9999s ease-out, background-color 9999s ease-in-out;
+}
+
+.input-field textarea {
+    margin: 0 0 3rem;
+    color: #000;
+    font-size: 1.8rem;
 }
 
 .elgg-system-messages {
@@ -112,6 +114,11 @@ input:-webkit-autofill:active {
     padding: 0;
 }
 
+.article__body .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
 .article__paragraph:last-child {
     margin: 0 0 2rem;
 }
@@ -123,6 +130,11 @@ input:-webkit-autofill:active {
 
 .article__image.___padding {
     padding: 2rem;
+}
+
+.article__image.___margin-top-bottom {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .article__image.___shadow {
@@ -168,4 +180,8 @@ input:-webkit-autofill:active {
     margin-left: auto;
     margin-right: auto;
     background-color: #cccccc;
+}
+
+.protection {
+    display: none;
 }

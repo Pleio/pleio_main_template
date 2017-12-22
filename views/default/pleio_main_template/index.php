@@ -71,7 +71,7 @@
                                 <p>Enkele veelbezochte deelsites zijn Leraar.nl, Forum Fiscaal Dienstverleners en Forum Salaris. <a href="https://www.leraar.nl">Leraar.nl</a> is een community voor docenten die geïnitieerd is vanuit het Ministerie van Onderwijs. Via de community <a href="https://ffd.pleio.nl">Forum Fiscaal Dienstverleners</a> kunnen accountants en belastingadviseurs vragen aan elkaar en aan de Belastingdienst stellen. <a href="https://fsa.pleio.nl">Forum Salaris</a> ten slotte is een samenwerkingsomgeving met betrekking tot de aangifte Loonheffingen van de Belastingdienst en het UWV.</p>
                             </div>
                         </div>
-                        <div class="col-sm-6"><img src="https://www.leraar.nl/mod/pleio_template/src/images/campagne-relevant.png" class="article__image ___right ___shadow"></div>
+                        <div class="col-sm-6"><img src="/mod/pleio_main_template/assets/images/campagne-relevant.png" class="article__image ___right ___shadow ___margin-top-bottom"></div>
                     </div>
                 </section>
 
@@ -101,7 +101,7 @@
                         <div class="row">
                             <div class="col-sm-7">
                                 <h2>Hulp en ondersteuning</h2>
-                                <p>Pleio heeft een <a href="mailto:support@pleio.org">helpdesk</a> voor vragen op het gebied van beheer en ontwikkeling en een <a href="https://mijndeelsite.pleio.nl/">online helppagina</a> met onder meer best practices en handreikingen. Ervaringen over Pleio worden online uitgewisseld, maar ook offline bij de 2-maandelijkse bijeenkomsten voor deelsitebeheerders.</p>
+                                <p>Via de helpdesk <a href="mailto:support@pleio.nl">support@pleio.nl</a> worden vragen op het gebied van beheer en ontwikkeling beantwoord. Op de <a href="https://mijndeelsite.pleio.nl/">online helppagina</a> biedt de community onder meer best practices en handreikingen. Ervaringen over Pleio worden online uitgewisseld, maar ook offline bij de 2-maandelijkse bijeenkomsten voor deelsitebeheerders.</p>
                             </div>
                             <div class="col-sm-5 middle-sm">
                                 <img class="article__image ___padding" src="/mod/pleio_main_template/assets/images/gebruiker.svg">
@@ -128,7 +128,7 @@
                 <section class="section">
                 <div class="article__header">
                     <div class="article__form ___center">
-                        <p>Vul het onderstaande formulier in om meer informatie aan te vragen.</p>
+                        <p>Vul het onderstaande formulier in om meer informatie over Pleio aan te vragen.</p>
                         <form method="POST" action="/action/request_info">
                             <?php echo elgg_view("input/securitytoken"); ?>
                             <div class="input-field">
@@ -137,9 +137,11 @@
                             </div>
 
                             <div class="input-field">
-                                <input type="text" id="email" name="email">
+                                <input type="email" id="email" name="email">
                                 <label for="email">E-mailadres</label>
                             </div>
+
+                            <p class="protection">Leave this empty: <input type="text" name="url" /></p>
 
                             <div class="login__buttons">
                                 <button name="request" class="button" type="submit">Vraag informatie aan</button>

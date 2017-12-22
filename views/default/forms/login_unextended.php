@@ -18,6 +18,6 @@ $returnto = urlencode(urldecode($_GET["returnto"]));
         <a href="/forgotpassword?returnto=<?php echo $returnto; ?>"><?php echo elgg_echo('user:password:lost'); ?></a>
     </div>
 </div>
-<input type="checkbox" name="persistent" class="filled-in" id="persistent" value="true">
+<input type="checkbox" name="persistent" class="filled-in" id="persistent" value="true" checked="checked">
 <label for="persistent"><?php echo elgg_echo('user:persistent'); ?></label>
 <input type="hidden" name="returnto" value="<?php echo $returnto; ?>">
