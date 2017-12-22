@@ -9,36 +9,49 @@
         </div>
         <ul class="navigation__menu">
             <li class="navigation__item">
-                <a class="navigation__link" href="#about">Uitgangspunten</a>
+                <a class="navigation__link" href="#about"><?php echo elgg_echo('pleio_main_template:principles'); ?></a>
             </li>
             <li class="navigation__item">
-                <a class="navigation__link" href="#examples">Voorbeelden</a>
+                <a class="navigation__link" href="#examples"><?php echo elgg_echo('pleio_main_template:examples'); ?></a>
             </li>
             <li class="navigation__item">
-                <a class="navigation__link" href="#organization">Organisatie</a>
+                <a class="navigation__link" href="#organization"><?php echo elgg_echo('pleio_main_template:organisation'); ?></a>
             </li>
             <li class="navigation__item">
-                <a class="navigation__link" href="#about">Help</a>
+                <a class="navigation__link" href="#about"><?php echo elgg_echo('pleio_main_template:help'); ?></a>
             </li>
             <li class="navigation__item">
-                <a class="navigation__link" href="#request">Deelsite aanvragen</a>
+                <a class="navigation__link" href="#request"><?php echo elgg_echo('pleio_main_template:request_a_subsite'); ?></a>
             </li>
         </ul>
     </div>
     <div class="navigation__bottom">
         <div class="navigation__account">
             <a href="/login">
-                <div class="button ___stretch ___outline">Inloggen</div>
+                <div class="button ___stretch ___outline"><?php echo elgg_echo('login'); ?></div>
             </a>
             <a href="/register">
-                <div class="button ___stretch ___white">Registreren</div>
+                <div class="button ___stretch ___white"><?php echo elgg_echo('register'); ?></div>
             </a>
         </div>
-        <!--
+
+        <?php $current_lang = get_current_language(); ?>
         <div class="navigation__languages">
-            <a class="navigation__language ___is-active" href="#">NL</a>
+            <a class="navigation__language <?php echo ($current_lang === "nl") ? "___is-active" : ""; ?>" href="javascript:setLanguage('nl');">NL</a>
             &nbsp;/&nbsp;
-            <a class="navigation__language " href="#">EN</a>
-        </div>-->
+            <a class="navigation__language  <?php echo ($current_lang === "en") ? "___is-active" : ""; ?>" href="javascript:setLanguage('en');">EN</a>
+        </div>
+
+		<script type="text/javascript">
+			function setLanguage(lang_id){
+				setCookie("client_language", lang_id, 30);
+				location.reload();
+			}
+			function setCookie(c_name,value,expiredays){
+				var exdate = new Date();
+				exdate.setDate(exdate.getDate() + expiredays);
+				document.cookie = c_name + "=" + escape(value) + ";Path=/" + ((expiredays == null) ? "" : ";expires=" + exdate.toGMTString());
+			}
+		</script>
     </div>
 </navigation>

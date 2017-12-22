@@ -18,7 +18,7 @@
             <div class="account__content-container">
                 <div class="account__content">
                     <?php echo elgg_view("pleio_main_template/messages", ["messages" => $vars["messages"]]); ?>
-                    <p>Vul de onderstaande velden in om een account aan te maken op Pleio.</p>
+                    <p><?php echo elgg_echo('pleio_main_template:registration:explanation'); ?></p>
                     <?php echo elgg_view_form("register"); ?>
                 </div>
             </div>
