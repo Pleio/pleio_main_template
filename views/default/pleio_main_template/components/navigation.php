@@ -34,11 +34,11 @@
                 <div class="button ___stretch ___white">Registreren</div>
             </a>
         </div>
+        <!--
         <div class="navigation__languages">
             <a class="navigation__language ___is-active" href="#">NL</a>
-            <!-- react-text: 38 -->&nbsp;/&nbsp;
-            <!-- /react-text -->
+            &nbsp;/&nbsp;
             <a class="navigation__language " href="#">EN</a>
-        </div>
+        </div>-->
     </div>
 </navigation>
