@@ -42,7 +42,7 @@ if (elgg_is_sticky_form('register')) {
 </div>
 
 <div class="register__button">
-    <button class="button ___stretch ___active" type="submit">Registreer</button>
+    <button class="button ___stretch ___active" type="submit"><?php echo elgg_echo('register'); ?></button>
 </div>
 
 <input type="hidden" name="returnto" value="<?php echo $returnto; ?>">
