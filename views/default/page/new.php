@@ -1,6 +1,5 @@
 <?php
 header("Content-type: text/html; charset=UTF-8");
-$load_js = elgg_extract("load_js", $vars, false);
 $lang = get_current_language();
 
 if (empty($vars["title"])) {
@@ -26,12 +25,10 @@ if (empty($vars["title"])) {
         <?php echo elgg_view("page/elements/messages", array("object" => $vars["sysmessages"])); ?>
         <?php echo $vars["body"]; ?>
 
-        <?php if ($load_js): ?>
-            <script src="/mod/pleio_main_template/assets/pleio_main_template.js?v=<?php echo $CONFIG->lastcache; ?>"></script>
-        <?php endif; ?>
         <script src="https://www.google.com/recaptcha/api.js"></script>
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+        <script src="/mod/pleio_main_template/assets/pleio_main_template.js?v=<?php echo $CONFIG->lastcache; ?>"></script>
         <?php echo elgg_view('footer/analytics'); ?>
     </body>
 </html>

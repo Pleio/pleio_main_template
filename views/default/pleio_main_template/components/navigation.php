@@ -1,7 +1,7 @@
 <navigation class="navigation">
     <div class="navigation__top">
         <div class="mobile-navigation__bar">
-            <div class="mobile-navigation__hamburger"></div>
+            <div class="mobile-navigation__hamburger" data-open-nav></div>
             <a class="navigation__logo" title="Terug naar de homepage" href="/">
                 <?php echo elgg_view("pleio_main_template/components/logo", ["white_logo" => true]); ?>
             </a>
@@ -9,19 +9,19 @@
         </div>
         <ul class="navigation__menu">
             <li class="navigation__item">
-                <a class="navigation__link" href="#about"><?php echo elgg_echo('pleio_main_template:principles'); ?></a>
+                <a class="navigation__link" href="#about" data-nav-link><?php echo elgg_echo('pleio_main_template:principles'); ?></a>
             </li>
             <li class="navigation__item">
-                <a class="navigation__link" href="#examples"><?php echo elgg_echo('pleio_main_template:examples'); ?></a>
+                <a class="navigation__link" href="#examples" data-nav-link><?php echo elgg_echo('pleio_main_template:examples'); ?></a>
             </li>
             <li class="navigation__item">
-                <a class="navigation__link" href="#organization"><?php echo elgg_echo('pleio_main_template:organisation'); ?></a>
+                <a class="navigation__link" href="#organization" data-nav-link><?php echo elgg_echo('pleio_main_template:organisation'); ?></a>
             </li>
             <li class="navigation__item">
-                <a class="navigation__link" href="#about"><?php echo elgg_echo('pleio_main_template:help'); ?></a>
+                <a class="navigation__link" href="#about" data-nav-link><?php echo elgg_echo('pleio_main_template:help'); ?></a>
             </li>
             <li class="navigation__item">
-                <a class="navigation__link" href="#request"><?php echo elgg_echo('pleio_main_template:request_a_subsite'); ?></a>
+                <a class="navigation__link" href="#request" data-nav-link><?php echo elgg_echo('pleio_main_template:request_a_subsite'); ?></a>
             </li>
         </ul>
     </div>
