@@ -18,7 +18,7 @@
                 <a class="navigation__link" href="#organization" data-nav-link><?php echo elgg_echo('pleio_main_template:organisation'); ?></a>
             </li>
             <li class="navigation__item">
-                <a class="navigation__link" href="#about" data-nav-link><?php echo elgg_echo('pleio_main_template:help'); ?></a>
+                <a class="navigation__link" href="#support" data-nav-link><?php echo elgg_echo('pleio_main_template:help'); ?></a>
             </li>
             <li class="navigation__item">
                 <a class="navigation__link" href="#request" data-nav-link><?php echo elgg_echo('pleio_main_template:request_a_subsite'); ?></a>
