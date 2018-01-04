@@ -16,7 +16,7 @@ if ($returnto && pleio_main_template_is_valid_returnto($returnto)) {
     $forward_url = REFERER;
 } else {
     // forward to main index page
-    $forward_url = '/dashboard';
+    $forward_url = '';
 }
 
 $username = get_input('username');

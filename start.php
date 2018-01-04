@@ -64,8 +64,12 @@ function pleio_main_template_init(){
 }
 
 function pleio_main_template_index_handler($page) {
-	include("pages/index.php");
-	return true;
+	if (!elgg_is_logged_in()) {
+		include("pages/index.php");
+		return true;
+	} else {
+		forward("dashboard");
+	}
 }
 
 function pleio_main_template_register_handler($page) {
@@ -74,7 +78,7 @@ function pleio_main_template_register_handler($page) {
 			include("pages/register_complete.php");
 			return true;
 		default:
-			include("pages/register.php");
+			include("pages/register.php");			
 			return true;
 	}
 }
