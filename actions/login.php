@@ -69,4 +69,15 @@ if (isset($_SESSION['last_forward_from'])) {
 }
 
 system_message($message);
-forward($forward_url);
+
+if (!$forward_url) {
+    $forward_url = '/';
+}
+if ($forward_url === REFERER) {
+    $forward_url = $_SERVER['HTTP_REFERER'];
+}
+
+$forward_url = elgg_normalize_url($forward_url);
+
+header("Location: $forward_url");
+exit();
