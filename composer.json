@@ -3,7 +3,7 @@
     "description": "The main theme of Pleio.nl.",
     "type": "elgg-plugin",
     "keywords": ["elgg", "plugin", "theme"],
-    "license": "GPL-2.0",
+    "license": "GPL-2.0-or-later",
     "support": {
         "source": "https://github.com/Pleio/pleio_main_template",
         "issues": "https://github.com/Pleio/pleio_main_template/issues"
