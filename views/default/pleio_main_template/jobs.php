@@ -48,7 +48,6 @@
                             <li>Nieuwe functionaliteiten bouwen.</li>
                             <li>Reageren op wensen vanuit onze deelsites.</li>
                             <li>Samenwerken met onze ontwerper en eventueel onze backend ontwikkelaar.</li>
-                            <li>Een marktconform salaris of vergoeding ontvangen.</li>
                         </ul>
                         <br />
                         We verwachten van jou:
@@ -74,7 +73,6 @@
                             <li>Helpen met het oplossen van bugs en het ontwikkelen van nieuwe features.</li>
                             <li>Samenwerken met onze collega’s in Canada.</li>
                             <li>Meedenken over onze roadmap en ontwikkelstrategie.</li>
-                            <li>Een marktconform salaris of vergoeding ontvangen.</li>
                         </ul>
                         <br />
                         We verwachten van jou:
@@ -99,7 +97,6 @@
                             <li>Onze infrastructuur onderhouden.</li>
                             <li>Meedenken over de inrichting van onze infrastructuur.</li>
                             <li>Meedenken over onze roadmap en ontwikkelstrategie.</li>
-                            <li>Een marktconform salaris ontvangen.</li>
                         </ul>
                         <br />
                         We verwachten van jou:
