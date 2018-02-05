@@ -64,7 +64,8 @@ $english = array(
 	<p>The use of the platform is free for the first year. Thereafter, the annual costs amount to € 2,250 per year. No switching costs will be charged.</p>',
 	'pleio_main_template:more_info' => 'Please fill in this form to request more information about Pleio.',
 	'pleio_main_template:request_more_info' => 'Request more info',
-	'pleio_main_template:or_send_an_email' => 'or send an e-mail to <a href="mailto:support@pleio.nl">support@pleio.nl</a>'
+	'pleio_main_template:or_send_an_email' => 'or send an e-mail to <a href="mailto:support@pleio.nl">support@pleio.nl</a>',
+	'pleio_main_template:jobs' => 'Jobs'
 );
 
 add_translation('en', $english);

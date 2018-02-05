@@ -39,6 +39,8 @@ function pleio_main_template_init(){
 	elgg_register_page_handler("forgotpassword", "pleio_main_template_forgotpassword_handler");
 	elgg_register_page_handler("resetpassword", "pleio_main_template_resetpassword_handler");
 
+	elgg_register_page_handler("jobs", "pleio_main_template_jobs_handler");
+
     elgg_unregister_plugin_hook_handler("email", "system", "html_email_handler_email_hook");
     elgg_register_plugin_hook_handler("email", "system", "pleio_main_template_email_handler");
 
@@ -108,6 +110,11 @@ function pleio_main_template_resetpassword_handler($page) {
 			include("pages/resetpassword.php");
 			return true;		
 	}
+}
+
+function pleio_main_template_jobs_handler($page) {
+	include("pages/jobs.php");
+	return true;
 }
 
 function pleio_main_template_graphql() {

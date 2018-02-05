@@ -3,10 +3,19 @@
 $url = get_input("url");
 $name = get_input("name");
 $email = get_input("email");
+$information_type = get_input("information_type");
+
+if ($information_type == "jobs") {
+    $subject = "Interesse voor vacatures van Pleio.nl";
+    $forward_url = "/jobs#request";
+} else {
+    $subject = "Nieuwe aanvraag voor meer informatie van Pleio.nl";
+    $forward_url = "/#request";
+}
 
 if ($url) {
     register_error(elgg_echo("pleio_main_template:fill_all_fields"));
-    forward("/#request");
+    forward($forward_url);
 }
 
 if ($name && $email) {
@@ -23,7 +32,6 @@ if ($name && $email) {
         $from = 'noreply@' . get_site_domain($CONFIG->site_guid);
     }
 
-    $subject = "Nieuwe aanvraag voor meer informatie van Pleio.nl";
     $message = "
         Naam: {$name}
         E-mail: {$email}
@@ -31,8 +39,9 @@ if ($name && $email) {
 
     system_message(elgg_echo("pleio_main_template:sent"));
     elgg_send_email($from, "support@pleio.nl", $subject, $message);
-    forward("/#request");
+
+    forward($forward_url);
 } else {
     register_error(elgg_echo("pleio_main_template:fill_all_fields"));
-    forward("/#request");
+    forward($forward_url);
 }

@@ -9,19 +9,22 @@
         </div>
         <ul class="navigation__menu">
             <li class="navigation__item">
-                <a class="navigation__link" href="#about" data-nav-link><?php echo elgg_echo('pleio_main_template:principles'); ?></a>
+                <a class="navigation__link" href="/#about" data-nav-link><?php echo elgg_echo('pleio_main_template:principles'); ?></a>
             </li>
             <li class="navigation__item">
-                <a class="navigation__link" href="#examples" data-nav-link><?php echo elgg_echo('pleio_main_template:examples'); ?></a>
+                <a class="navigation__link" href="/#examples" data-nav-link><?php echo elgg_echo('pleio_main_template:examples'); ?></a>
             </li>
             <li class="navigation__item">
-                <a class="navigation__link" href="#organization" data-nav-link><?php echo elgg_echo('pleio_main_template:organisation'); ?></a>
+                <a class="navigation__link" href="/#organization" data-nav-link><?php echo elgg_echo('pleio_main_template:organisation'); ?></a>
             </li>
             <li class="navigation__item">
-                <a class="navigation__link" href="#support" data-nav-link><?php echo elgg_echo('pleio_main_template:help'); ?></a>
+                <a class="navigation__link" href="/#support" data-nav-link><?php echo elgg_echo('pleio_main_template:help'); ?></a>
             </li>
             <li class="navigation__item">
-                <a class="navigation__link" href="#request" data-nav-link><?php echo elgg_echo('pleio_main_template:request_a_subsite'); ?></a>
+                <a class="navigation__link" href="/#request" data-nav-link><?php echo elgg_echo('pleio_main_template:request_a_subsite'); ?></a>
+            </li>
+            <li class="navigation__item">
+                <a class="navigation__link" href="/jobs" data-nav-link><?php echo elgg_echo('pleio_main_template:jobs'); ?></a>
             </li>
         </ul>
     </div>
