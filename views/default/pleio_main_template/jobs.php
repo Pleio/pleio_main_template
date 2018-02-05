@@ -115,7 +115,7 @@
                 <section class="section">
                 <div class="article__header">
                     <div class="article__form ___center">
-                        <p>Vul het onderstaande formulier in wanneer je meer informatie wil hebben over werken voor Pleio.</p>
+                        <p>Vul het onderstaande formulier in voor meer informatie over werken aan Pleio.</p>
                         <form method="POST" action="/action/request_info">
                             <?php echo elgg_view("input/securitytoken"); ?>
                             <input type="hidden" name="information_type" value="jobs">
@@ -135,7 +135,7 @@
                                 <button name="request" class="button" type="submit"><?php echo elgg_echo('pleio_main_template:request_more_info'); ?></button>
                             </div>
 
-                            <p class="___smaller ___center">Of stuur een e-mail naar <a href="vacatures@pleio.nl">vacatures@pleio.nl</a></p>
+                            <p class="___smaller ___center">Of stuur een e-mail naar <a href="werken-aan@pleio.nl">werken-aan@pleio.nl</a></p>
                         </form>
                     </div>
                 </div>
