@@ -66,7 +66,7 @@ $dutch = array(
 	'pleio_main_template:more_info' => 'Vul het onderstaande formulier in om meer informatie over Pleio aan te vragen.',
 	'pleio_main_template:request_more_info' => 'Vraag meer informatie aan',
 	'pleio_main_template:or_send_an_email' => 'of stuur een e-mail naar <a href="mailto:support@pleio.nl">support@pleio.nl</a>',
-	'pleio_main_template:jobs' => 'Werken aan Pleio'
+	'pleio_main_template:jobs' => 'Werken bij Pleio'
 );
 
 add_translation('nl', $dutch);

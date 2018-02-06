@@ -33,8 +33,8 @@
                     <p>We staan in nauw contact met deelsitebeheerders en komen bij vele overheidsorganisaties over de vloer, geven ondersteuning op het platform en organiseren workshops voor nieuwe deelsite- en accounthouders. Onze gebruikers zijn overheden zoals ministeries, provincies en gemeenten, uitvoeringsorganisaties en allerlei samenwerkingsverbanden, waaronder publiek-private samenwerkingen.</p>
                     <br />
                     <h3>Waar werken we aan?</h3>
-                    <p>We zijn best trots op ons nieuwe template dat we afgelopen jaar hebben gelanceerd. Met dit template zijn we een nieuwe technische richting ingeslagen waarbij we componenten gebruiken zoals <a href="facebook.github.io/react/">React</a> en <a href="http://graphql.org/">GraphQL</a>. Dit jaar willen we een nieuwe backend ontwikkelen op basis van <a href="https://www.python.org/">Python</a> en <a href="https://www.djangoproject.com/">Django</a>.</p>
-                    <p>We hebben de ambitie om verder te groeien en hét samenwerkingsplatform binnen de Nederlandse overheid te worden. Onze ontwikkelaars werken samen met ontwikkelaars van de Canadese overheid aan open source componenten die in beide landen kunnen worden ingezet. Daarnaast is alle software die we maken open source te vinden op <a href="https://www.github.com/Pleio">Github</a>.</p>
+                    <p>We zijn best trots op ons nieuwe template dat we onlangs hebben gelanceerd. Met dit template zijn we een nieuwe technische richting ingeslagen waarbij we componenten gebruiken zoals <a href="facebook.github.io/react/">React</a> en <a href="http://graphql.org/">GraphQL</a>. Dit jaar willen we een nieuwe backend ontwikkelen op basis van <a href="https://www.python.org/">Python</a> en <a href="https://www.djangoproject.com/">Django</a>.</p>
+                    <p>We hebben de ambitie om verder te groeien en hét samenwerkingsplatform binnen de Nederlandse overheid te worden. Onze ontwikkelaars werken samen met ontwikkelaars van de Canadese overheid aan open source componenten die in beide landen kunnen worden ingezet. Daarnaast wordt al onze software gepubliceerd op <a href="https://www.github.com/Pleio">Github</a>.</p>
                     </div>
                 </section>
 
@@ -103,7 +103,7 @@
                         <br /><br />
                         <ul class="disc">
                             <li>Basiskennis van Python of PHP.</li>
-                            <li>Ervaring met Linux, Docker, MySQL. Kennis van Kubernetes is mooi meegenomen.</li>
+                            <li>Ervaring met Linux, Docker en MySQL. Kennis van Kubernetes is mooi meegenomen.</li>
                             <li>Affiniteit met de overheid en met onze werkwijze.</li>
                         </ul>
                     </div>
@@ -112,7 +112,7 @@
                 <section class="section">
                 <div class="article__header">
                     <div class="article__form ___center">
-                        <p>Vul het onderstaande formulier in voor meer informatie over werken aan Pleio.</p>
+                        <p>Vul het onderstaande formulier in voor meer informatie over werken bij Pleio.</p>
                         <form method="POST" action="/action/request_info">
                             <?php echo elgg_view("input/securitytoken"); ?>
                             <input type="hidden" name="information_type" value="jobs">
@@ -132,7 +132,7 @@
                                 <button name="request" class="button" type="submit"><?php echo elgg_echo('pleio_main_template:request_more_info'); ?></button>
                             </div>
 
-                            <p class="___smaller ___center">Of stuur een e-mail naar <a href="werken-aan@pleio.nl">werken-aan@pleio.nl</a></p>
+                            <p class="___smaller ___center">Of stuur een e-mail naar <a href="werken-aan@pleio.nl">werken-bij@pleio.nl</a></p>
                         </form>
                     </div>
                 </div>
