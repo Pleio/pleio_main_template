@@ -47,6 +47,9 @@ function pleio_main_template_init(){
 	elgg_unregister_action("login");
 	elgg_register_action("login", dirname(__FILE__) . "/actions/login.php", "public");
 
+	elgg_unregister_action("logout");
+	elgg_register_action("logout", dirname(__FILE__) . "/actions/logout.php", "public");
+
 	elgg_unregister_action("register");
 	elgg_register_action("register", dirname(__FILE__) . "/actions/register.php", "public");
 
