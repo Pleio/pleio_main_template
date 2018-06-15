@@ -65,7 +65,9 @@ $english = array(
 	'pleio_main_template:more_info' => 'Please fill in this form to request more information about Pleio.',
 	'pleio_main_template:request_more_info' => 'Request more info',
 	'pleio_main_template:or_send_an_email' => 'or send an e-mail to <a href="mailto:support@pleio.nl">support@pleio.nl</a>',
-	'pleio_main_template:jobs' => 'Jobs'
+	'pleio_main_template:jobs' => 'Jobs',
+    'pleio_main_template:notification:explain' => "You recieve this e-mail because you are subscribed for the notifications.",
+    'pleio_main_template:notification:link' => "Click <a href=\"%s\">here</a> to change the settings."
 );
 
 add_translation('en', $english);
