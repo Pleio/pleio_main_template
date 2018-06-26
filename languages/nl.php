@@ -40,7 +40,7 @@ $dutch = array(
 	'pleio_main_template:examples' => 'Voorbeelden',
 	'pleio_main_template:organisation' => 'Organisatie',
 	'pleio_main_template:help' => 'Help',
-	'pleio_main_template:request_a_subsite' => 'Deelsite aanvragen',
+	'pleio_main_template:subsites' => 'Deelsites',
 	'pleio_main_template:collaborating' => 'Samenwerken aan de publieke zaak',
 	'pleio_main_template:intro' => 'Pleio is een online samenwerkingsplatform voor alle overheidsorganisaties en bestuurslagen in Nederland. Gebruikers kunnen met hun eigen account inloggen op Pleio-deelsites, waar samenwerking, online ontmoetingen en uitwisseling van kennis plaatsvinden. Pleio heeft ruim <b>388.000</b> gebruikers en meer dan <b>400</b> deelsites. Onder andere de Belastingdienst, het Ministerie van Economische Zaken, het Nationaal Archief, het Samenwerkingsplatform Provincies en diverse gemeenten maken gebruik van Pleio.',
 	'pleio_main_template:open_source' => 'Open source en hergebruik',
@@ -62,7 +62,7 @@ $dutch = array(
 	'pleio_main_template:request_subsite:desc' => '<p>Overheidsorganisaties kunnen een eigen deelsite aanmaken en kunnen deze vervolgens vrij uitbreiden. De deelsitebeheerder krijgt toegang tot een set van basisfunctionaliteiten, waaronder een helpdeskfunctie, instructies en templates voor een intranetsites, community’s en websites. Uiteraard verzorgt Pleio de hosting.</p>
 	<p>Nieuwe gebruikers kunnen deelnemen aan de kleinschalige startersbijeenkomsten (maximaal vijf personen). In 1 tot 2 dagdelen behandelt een medewerker Gebruikersondersteuning van Pleio alle mogelijkheden en neemt gebruikers stap voor stap mee in het inrichten van een deelsite.</p>
 	<p>Overstappen van Pleio naar een andere partij is eenvoudig. Op verzoek ontvangt de deelsitebeheerder kosteloos een complete back-up.</p>
-	<p>Het gebruik van het platform is het eerste jaar gratis. Daarna bedragen de jaarlijkse kosten € 2.250 per jaar. Er worden geen overstap- en uitfaseerkosten in rekening gebracht.</p>',
+	<p>Het gebruik van het platform is het eerste jaar gratis. Daarna bedragen de jaarlijkse kosten voor een standaard site € 2.250 per jaar. Er worden geen overstap- en uitfaseerkosten in rekening gebracht.</p>',
 	'pleio_main_template:more_info' => 'Vul het onderstaande formulier in om meer informatie over Pleio aan te vragen.',
 	'pleio_main_template:request_more_info' => 'Vraag meer informatie aan',
 	'pleio_main_template:or_send_an_email' => 'of stuur een e-mail naar <a href="mailto:support@pleio.nl">support@pleio.nl</a>',

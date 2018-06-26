@@ -69,12 +69,8 @@ function pleio_main_template_init(){
 }
 
 function pleio_main_template_index_handler($page) {
-	if (!elgg_is_logged_in()) {
-		include("pages/index.php");
-		return true;
-	} else {
-		forward("dashboard");
-	}
+	include("pages/index.php");
+	return true;
 }
 
 function pleio_main_template_register_handler($page) {
@@ -83,7 +79,7 @@ function pleio_main_template_register_handler($page) {
 			include("pages/register_complete.php");
 			return true;
 		default:
-			include("pages/register.php");			
+			include("pages/register.php");
 			return true;
 	}
 }
@@ -135,7 +131,7 @@ function pleio_main_template_sidebar_menu_setup($hook, $type, $return, $params){
 		$menu[] = new ElggMenuItem("toggle_sidebar",elgg_echo("pleio_main_template:menu:sidebar:toggle"),"");
 		$menu[] = new ElggMenuItem("dashboard", elgg_echo("dashboard"), "dashboard");
 		$menu[] = new ElggMenuItem("groups", elgg_echo("groups"), "groups/all");
-		$menu[] = new ElggMenuItem("subsites", elgg_echo("subsite_manager:menu:subsites"), "subsites");
+		$menu[] = new ElggMenuItem("subsites", elgg_echo("subsite_manager:menu:subsites"), "sites/");
 // 		$menu[] = new ElggMenuItem("subsites-request", elgg_echo("subsite_manager:menu:subsites:request"), "deelsite-aanvragen");
 		$menu[] = new ElggMenuItem("members", elgg_echo("members"), "members");
 		
