@@ -35,10 +35,6 @@ if (elgg_is_sticky_form('register')) {
         <input type="checkbox" class="filled-in" id="checkbox-terms" name="terms" value="true"></input>
         <label for="checkbox-terms"><?php echo elgg_echo("pleio_main_template:i_agree_with"); ?> <a href="/terms" target="_blank"><?php echo elgg_echo("pleio_main_template:terms"); ?></a></label>
     </div>
-    <div class="register__check">
-        <input type="checkbox" class="filled-in" id="checkbox-newsletter" name="newsletter" value="true"></input>
-        <label for="checkbox-newsletter"><?php echo elgg_echo("pleio_main_template:subscribe_newsletter"); ?></label>
-    </div>
 </div>
 
 <div class="register__button">
