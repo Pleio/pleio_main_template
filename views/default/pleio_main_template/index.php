@@ -116,6 +116,7 @@
                         <div class="article__request">
                             <h2><?php echo elgg_echo('pleio_main_template:request_subsite'); ?></h2>
                             <?php echo elgg_echo('pleio_main_template:request_subsite:desc'); ?>
+                            <a href="/sites/request_subsite/" class="button"><?php echo elgg_echo('pleio_main_template:request_subsite'); ?></a>
                         </div>
                     </div>
                 </section>
