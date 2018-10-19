@@ -1,5 +1,8 @@
 <?php
-$returnto = urlencode(urldecode($_GET["returnto"]));
+$returnto = $_GET["returnto"];
+$returnto = str_replace("\"", "&quot;", $returnto);
+$returnto = str_replace("<", "&lt;", $returnto);
+$returnto = str_replace(">", "&gt;", $returnto);
 ?>
 <div class="input-field">
     <input type="text" id="input-username" class="validate" required="" name="username" value="" placeholder="" autofocus>
