@@ -7,7 +7,7 @@
  */
 
 // set forward url
-$returnto = urldecode(get_input("returnto"));
+$returnto = $_POST["returnto"];
 if ($returnto && pleio_main_template_is_valid_returnto($returnto)) {
     $forward_url = $returnto;
 } elseif (!empty($_SESSION['last_forward_from'])) {

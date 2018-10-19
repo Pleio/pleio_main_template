@@ -18,7 +18,6 @@ $invitecode = get_input('invitecode');
 
 $terms = get_input('terms');
 $newsletter = get_input('newsletter');
-$returnto = urldecode(get_input('returnto'));
 
 if (!$terms) {
     register_error(elgg_echo("pleio_main_template:accept_terms"));
@@ -84,8 +83,8 @@ if (elgg_get_config('allow_registration')) {
                 // do nothing
             }
 
-            if ($returnto && pleio_main_template_is_valid_returnto($returnto)) {
-                $_SESSION['last_forward_from'] = $returnto;
+            if ($_POST['returnto'] && pleio_main_template_is_valid_returnto($_POST['returnto'])) {
+                $_SESSION['last_forward_from'] = $_POST['returnto'];
             }
 
             // Forward on success, assume everything else is an error...
