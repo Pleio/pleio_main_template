@@ -17,8 +17,8 @@ $returnto = str_replace(">", "&gt;", $returnto);
         <button name="login" class="button ___stretch ___active login__login" type="submit"><?php echo elgg_echo('login'); ?></button>
     </div>
     <div class="forgot-password">
-        <a href="/register?returnto=<?php echo $returnto; ?>"><?php echo elgg_echo('register'); ?></a><br />
-        <a href="/forgotpassword?returnto=<?php echo $returnto; ?>"><?php echo elgg_echo('user:password:lost'); ?></a>
+        <a href="/register?returnto=<?php echo urlencode($returnto); ?>"><?php echo elgg_echo('register'); ?></a><br />
+        <a href="/forgotpassword?returnto=<?php echo urlencode($returnto); ?>"><?php echo elgg_echo('user:password:lost'); ?></a>
     </div>
 </div>
 <input type="checkbox" name="persistent" class="filled-in" id="persistent" value="true" checked="checked">

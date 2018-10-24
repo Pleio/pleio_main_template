@@ -1,14 +1,14 @@
 <?php
-$returnto = urlencode(urldecode($_GET["returnto"]));
-?>
+$returnto = $_GET["returnto"];
+$returnto = str_replace("\"", "&quot;", $returnto);
+$returnto = str_replace("<", "&lt;", $returnto);
+$returnto = str_replace(">", "&gt;", $returnto);
 
-<?php
 if (elgg_is_sticky_form('register')) {
     extract(elgg_get_sticky_values('register'));
     elgg_clear_sticky_form('register');
 }
 ?>
-
 <div class="input-field">
     <input class="validate" id="input-name" type="text" pattern=".{5,}" name="name" value="<?php echo $name; ?>" autofocus></input>
     <label for="input-name"><?php echo elgg_echo('name'); ?></label>
@@ -39,6 +39,11 @@ if (elgg_is_sticky_form('register')) {
 
 <div class="register__button">
     <button class="button ___stretch ___active" type="submit"><?php echo elgg_echo('register'); ?></button>
+</div>
+
+<div class="forgot-password">
+    <a href="/login?returnto=<?php echo urlencode($returnto); ?>"><?php echo elgg_echo('login'); ?></a><br />
+    <a href="/forgotpassword?returnto=<?php echo urlencode($returnto); ?>"><?php echo elgg_echo('user:password:lost'); ?></a>
 </div>
 
 <input type="hidden" name="returnto" value="<?php echo $returnto; ?>">
